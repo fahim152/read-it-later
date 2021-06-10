@@ -16,7 +16,7 @@ class CreatePocketContentsTable extends Migration
         Schema::create('pocket_contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pocket_id')->constrained('pockets');
-            $table->string('url');
+            $table->text('url');
             $table->timestamps();
         });
     }

@@ -3,8 +3,6 @@
 
 namespace App\Services;
 
-use GuzzleHttp\Client;
-
 trait ResponseHelperTrait
 {
     private $data = [

@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('test', [PocketController::class, 'test']);
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
