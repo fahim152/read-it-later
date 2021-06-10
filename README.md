@@ -1,5 +1,5 @@
 # Read Me Later
-> Copy link and put in your pocket, read it later. You are welcome.  
+> Copy link and put in your pocket, read it later. Thank me now ! 😉 
 
 ### Table of Contents
 
@@ -116,7 +116,7 @@ DELETE api/v1/contents/{id}
 ```
 
 ## Error Response Codes
-Only Http response is not enough to handle error at client's end. So, to make apis **developer friendly**, I always pass 6 digit alpha numeric **error_code** in response if any error occurs. In this way you can specifically handle the response in your end, at your perspactive. Also, it makes bug / error finding more easier for the backend guy I guess. **You are welcome bro!** 
+Only Http response is not enough to handle error at client's end. So, to make apis **developer friendly**, I always pass 6 digit alpha numeric **error_code** in response if any error occurs. In this way you can specifically handle the response in your end, at your perspactive. Also, it makes bug / error finding more easier for the backend guy I guess. **You are welcome bro!** 😉
 
 | Code  | Meaning |
 | ------------- | ------------- |
