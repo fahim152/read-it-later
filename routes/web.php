@@ -1,5 +1,6 @@
 <?php
 
+use App\Pocket;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+
+    $pockets = Pocket::with('contents')->get();
+
+    return view('pockets', compact('pockets'));
+});

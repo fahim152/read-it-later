@@ -12,4 +12,9 @@ class PocketContent extends Model
     {
         return $this->belongsTo(Pocket::class);
     }
+
+    public function getCreatedAt()
+    {
+        return date("d-m-Y h:i", strtotime($this->created_at));
+    }
 }
