@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\PocketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -20,4 +20,9 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
+    Route::post('pockets', [PocketController::class, 'store']);
+    Route::post('pockets/{id}/contents', [PocketController::class, 'storeContents']);
+    Route::get('pockets/{id}/contents', [PocketController::class, 'viewContents']);
+
+    Route::delete('contents/{id}', [PocketController::class, 'deleteContent']);
 });

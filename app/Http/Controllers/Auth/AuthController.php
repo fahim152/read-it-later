@@ -66,4 +66,8 @@ class AuthController extends Controller
             "access_token"    => $token,
         ]);
     }
+
+    public function test(){
+        dd('asdasd');
+    }
 }
