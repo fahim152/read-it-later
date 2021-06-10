@@ -17,6 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     $pockets = Pocket::with('contents')->get();
-
     return view('pockets', compact('pockets'));
 });

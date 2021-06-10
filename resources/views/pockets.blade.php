@@ -21,9 +21,7 @@
   </head>
 
   <body>
-
     <header>
-
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
@@ -56,16 +54,20 @@
             @foreach($pocket->contents as $content)
                 <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                    @if($content->image)
+                    <img src="{{ $content->image }}" alt="">
+                    @endif
                     <div class="card-body">
+                    <h5 class="card-title"> {{ $content->title }}</h5>
                     <p class="card-text">
-                        <iframe src="{{ $content->url }}" title="description" allowfullscreen></iframe>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        </p>
+                        @if(! $content->image)
+                        <iframe src="{{ $content->url }}" ></iframe>
+                        {{ $content->description }}
+                        @endif
+                    </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="{{ $content->url }}"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button> </a>
-
+                            <a href="{{ $content->url }}" target="__blank"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button> </a>
                         </div>
                         <small class="text-muted">{{$content->getCreatedAt()}} </small>
                     </div>
