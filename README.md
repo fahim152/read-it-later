@@ -46,6 +46,9 @@ Or, If you have pm2 install in your machine simply use,
 ```
 pm2 start ecosystem.queue.config.js 
 ```
+
+Landing will redirect directly to /pockets url which will show all the pockets saved by users. But at first check the api documentation below to create pockets
+
 ---
 ## API documentation
 
@@ -119,5 +122,6 @@ Only Http response is not enough to handle error at client's end. So, to make ap
 | ------------- | ------------- |
 | JXTNL3  | Pocket ID does not exist or you may simply not authorized to use others pocket id.  |
 | ZUNS1  | No Contents found on this pocket  |
+| 7SVLGO  | Invalid Url for pocket  |
 
 

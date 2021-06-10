@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Pocket;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     $pockets = Pocket::with('contents')->get();
+//     return view('pockets', compact('pockets'));
+// });
 
-    $pockets = Pocket::with('contents')->get();
-    return view('pockets', compact('pockets'));
+Route::get('/', function () {
+    return redirect('/pockets');
 });
+
+Route::get('/pockets', [HomeController::class, 'index']);
