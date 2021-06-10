@@ -59,7 +59,7 @@ class PocketController extends Controller
     {
         $pocket = Pocket::with('contents')->where('user_id', auth()->user()->id)->where('id', $id)->first();
         if (! $pocket) {
-            return response()->json(['success' => false, 'error_code' => 'KTTNS1', 'message' => 'No pocket found with this ID']);
+            return response()->json(['success' => false, 'error_code' => 'JXTNL3', 'message' => 'No pocket found with this ID or you may not authenticate to use others pocket']);
         }
 
         if(count($pocket->contents) == 0) {
@@ -76,7 +76,7 @@ class PocketController extends Controller
         })->where('id', $id)->first();
 
         if(! $content) {
-            return response()->json(['success' => false, 'error_code' => 'E3V3B5', 'message' => 'No contents found on this pocket']);
+            return response()->json(['success' => false, 'error_code' => 'ZUNS1', 'message' => 'No contents found on this pocket']);
         }
 
         if($content->delete()) {

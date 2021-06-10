@@ -16,14 +16,17 @@ use App\Http\Controllers\Auth\AuthController;
 */
 Route::get('test', [PocketController::class, 'test']);
 
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
+Route::group(['prefix' => 'v1'], function () {
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-    Route::post('pockets', [PocketController::class, 'store']);
-    Route::post('pockets/{id}/contents', [PocketController::class, 'storeContents']);
-    Route::get('pockets/{id}/contents', [PocketController::class, 'viewContents']);
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::post('pockets', [PocketController::class, 'store']);
+        Route::post('pockets/{id}/contents', [PocketController::class, 'storeContents']);
+        Route::get('pockets/{id}/contents', [PocketController::class, 'viewContents']);
 
-    Route::delete('contents/{id}', [PocketController::class, 'deleteContent']);
-});
+        Route::delete('contents/{id}', [PocketController::class, 'deleteContent']);
+
+    });
+ });
