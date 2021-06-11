@@ -28,6 +28,9 @@ QUEUE_CONNECTION=database
 
 After that, run, 
 ```
+php artisan key:generate
+```
+```
 php artisan migrate
 ```
 
